@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>navigator & google maps</title>
+	<meta charset="utf-8" />
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">QCVKMJJWM3PQ-1355832870-208</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">37959256-073e-4ffe-a72e-5df4626da5d9</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://ppedv.sharepoint.com/sites/files/Trainer/_layouts/15/DocIdRedir.aspx?ID=QCVKMJJWM3PQ-1355832870-208, QCVKMJJWM3PQ-1355832870-208</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+
+    <p>
+        <iframe id="map" src="" frameborder="0" width="400" height="400" style="border: 2px solid black"></iframe>
+    </p>
+    <p>
+        <button onclick="positionAbfragen();">Position Abfragen</button>
+
+        <a href="#" target="_blank" id="meinLink" style="display: none">Google Maps</a>
+    </p>
+    <script>
+
+
+        function positionAbfragen() {
+            navigator.geolocation.getCurrentPosition(erfolg, fehler, options);
+        }
+        function fehler(fehlerObj) {
+            alert("Fehler: " + fehlerObj.code + " : " + fehlerObj.message);
+        }
+
+        var options = {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
+        };
+
+        function erfolg(postionObj) {
+
+            var gurl = "http://maps.google.de/maps?hl=de&q=loc:" + postionObj.coords.latitude + "," + postionObj.coords.longitude;
+
+            document.getElementById("meinLink").style.display = "block";
+            document.getElementById("meinLink").href = gurl;
+
+            // damit google maps in einen iframe angezeigt werden kann 
+            gurl += "&output=embed";
+
+            document.getElementById("map").src = gurl;
+        }
+    </script>
+</body>
+</html>

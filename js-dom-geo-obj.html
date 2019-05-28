@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">QCVKMJJWM3PQ-1355832870-207</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">c7e5da4d-8f29-41f0-84e1-5b5a19f90a7f</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://ppedv.sharepoint.com/sites/files/Trainer/_layouts/15/DocIdRedir.aspx?ID=QCVKMJJWM3PQ-1355832870-207, QCVKMJJWM3PQ-1355832870-207</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+
+    <div id="location">Suche...</div>
+
+    <script>
+
+        if ("geolocation" in navigator) {
+
+            navigator.geolocation.getCurrentPosition(erfolg, fehler, options);
+
+            function fehler(fehlerObj) {
+                alert("Fehler: " + fehlerObj.code + " : " + fehlerObj.message);
+            }
+
+            var options = {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0
+            };
+
+            function erfolg(positionObj) {
+
+                var msg = "Zeit: " + positionObj.timestamp + "<br />" +
+                    "Breitengrad: " + positionObj.coords.latitude + "<br />" +
+                    "Längengrad: " + positionObj.coords.longitude + "<br />" +
+                    "Höhe: " + positionObj.coords.altitude + "<br />" +
+
+                    "Präzision: " + positionObj.coords.accuracy + "<br />" +
+                    "Präzision Höhe: " + positionObj.coords.altitudeAccuracy + "<br />" +
+
+                    "Richtung: " + positionObj.coords.heading + "<br />" +
+                    "Speed: " + positionObj.coords.speed + "<br />";
+
+                document.getElementById("location").innerHTML = msg;
+            }
+        }
+
+    </script>
+
+</body>
+</html>

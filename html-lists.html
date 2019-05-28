@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML Listen</title>
+    <style>
+        /* Nummerierung bei Verschachtelung */
+        .obereListe li {
+            counter-increment: liCounter;
+            list-style-type: none;
+        }
+
+        .obereListe li li {
+            counter-increment: liliCounter;
+            list-style-type: none;
+        }
+
+        .obereListe li::before {
+            content: counter(liCounter) ". "
+        }
+
+        .obereListe li li::before {
+            content: counter(liCounter) "."counter(liliCounter) ". ";
+        }
+
+
+        dt {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ul - unordered list - unsortierte Liste</h1>
+    <!-- ul>li{list item $}*4 -->
+    <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+        <li>list item 4</li>
+    </ul>
+    <hr>
+    <h2>ul verschachtelt</h2>
+    <ul>
+        <li>list item 1
+            <ul>
+                <li>list item 1</li>
+                <li>list item 2</li>
+                <li>list item 3</li>
+                <li>list item 4</li>
+            </ul>
+        </li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+        <li>list item 4</li>
+    </ul>
+    <hr>
+    <h1>ol - ordered list - sortierte Liste</h1>
+    <!-- ol>li{list item $}*4 -->
+    <ol>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+        <li>list item 4</li>
+    </ol>
+    <hr>
+    <h2>ol reversed</h2>
+    <ol reversed>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+        <li>list item 4</li>
+    </ol>
+    <hr>
+    <h2>ol mit festgelegtem Start</h2>
+    <ol start="101">
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+        <li>list item 4</li>
+    </ol>
+    <hr>
+    <h2>ol mit anderer Nummerierungsart</h2>
+    <p>type nicht in HTML5</p>
+    <a href="https://www.w3schools.com/tags/tag_li.asp">Link</a>
+    <p>value austesten</p>
+    <ol type="a">
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+        <li>list item 4</li>
+    </ol>
+    <ol type="I">
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+        <li>list item 4</li>
+    </ol>
+    <hr>
+    <h2>ol verschachtelt</h2>
+    <p>über CSS, nicht HTML</p>
+    <a href="https://wiki.selfhtml.org/wiki/CSS/Tutorials/Listen_mit_hybrider_Nummerierung_formatieren">Link</a>
+    <ol class="obereListe">
+        <li>List Item mit weiterer ol
+            <ol class="untereListe">
+                <li>li 01</li>
+                <li>li 02</li>
+                <li>li 03</li>
+            </ol>
+        </li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+        <li>list item 4</li>
+    </ol>
+
+    <h1>dl - description list - Beschreibungsliste</h1>
+    <p>z.B. für Glossare</p>
+    <!-- dl>(dt{definition term $}+dd{definition description $})*3 -->
+    <dl>
+        <dt>definition term 1</dt>
+        <dd>definition description 1</dd>
+        <dt>definition term 2</dt>
+        <dd>definition description 2</dd>
+        <dt>definition term 3</dt>
+        <dd>definition description 3</dd>
+    </dl>
+
+    <hr>
+
+
+
+
+</body>
+
+</html>

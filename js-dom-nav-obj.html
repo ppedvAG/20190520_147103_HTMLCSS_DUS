@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS navigator object</title>
+    <style>
+        td {
+            border: thin solid;
+
+        }
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- (h3{Eigenschaft $}+p#outp$)*8 -->
+    <h3>Eigenschaft 1</h3>
+    <p id="outp1"></p>
+    <h3>Eigenschaft 2</h3>
+    <p id="outp2"></p>
+    <h3>Eigenschaft 3</h3>
+    <p id="outp3"></p>
+    <h3>Eigenschaft 4</h3>
+    <p id="outp4"></p>
+    <h3>Eigenschaft 5</h3>
+    <p id="outp5"></p>
+    <h3>Eigenschaft 6</h3>
+    <p id="outp6"></p>
+    <h3>Eigenschaft 7</h3>
+    <p id="outp7"></p>
+    <p id="outp7_1"></p>
+    <h3>Eigenschaft 8</h3>
+    <p id="outp8"></p>
+
+
+    <script>
+
+        outp1.textContent = "appCodeName: " + navigator.appCodeName;
+        outp2.textContent = "appName: " + navigator.appName;
+        outp3.textContent = "appVersion: " + navigator.appVersion;
+        outp4.textContent = "userAgent: " + navigator.userAgent;
+        outp5.textContent = "platform: " + navigator.platform;
+        outp6.textContent = "language: " + navigator.language;
+        outp7.textContent = "plugins: " + navigator.plugins;
+        console.log(navigator.plugins.length);
+        outp8.textContent = "javaEnabled(): " + navigator.javaEnabled();
+    
+        /* Plugins ausgeben: */
+        let pluginsLength = navigator.plugins.length;
+        outp7_1.innerHTML = pluginsLength + 
+        ' Plugins<br>' +
+        '<table id="pluginTable"><thead>' +
+        '<tr><th>Name</th><th>Filename</th><th>Descr</th><th>Version</th></tr>' +
+        '</thead><tbody></tbody></table>';
+
+        let table = document.getElementById("pluginTable");
+
+        for (let i=0; i < pluginsLength; i++) {
+            let newRow = table.insertRow();
+            newRow.insertCell().textContent = navigator.plugins[i].name;
+            newRow.insertCell().textContent = navigator.plugins[i].filename;
+            newRow.insertCell().textContent = navigator.plugins[i].description;
+            newRow.insertCell().textContent = navigator.plugins[i].version;
+        }
+        //version gibt es nicht, mindestens nicht bei den Plugins in chrome
+        
+
+
+    </script>
+
+</body>
+</html>

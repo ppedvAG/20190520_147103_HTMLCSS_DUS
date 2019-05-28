@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Grundlagen</title>
+</head>
+<body>
+
+    <script>
+
+        let zahl = 5;
+        let text = "5";
+        let zahlMitKonstr = new Number(5);
+        let textMitKonstr = new String("5");
+        let c = zahl + text;
+        console.log("c: " + c); //55
+        console.log("typeof c: " + typeof c); //string
+
+        console.log("zahl==text: " + (zahl == text));
+        console.log("zahl==text: ", zahl == text); //true
+        console.log("zahl===text: ", zahl === text); //false
+
+        console.log("zahlMitKonstr: ", typeof zahlMitKonstr); //object
+        console.log("textMitKonstr: ", typeof textMitKonstr); //object
+
+        let zahl2MitKonstr = new Number(5);
+        console.log("zahlMitKonstr==zahl2MitKonstr: ", zahlMitKonstr==zahl2MitKonstr);//false
+        console.log("zahlMitKonstr===zahl2MitKonstr: ", zahlMitKonstr===zahl2MitKonstr);//false
+        /* Objekte beim Vergleichen - immer false!!! */
+
+
+
+        /* Casting */
+        /* string to number */
+        /* variante 1 */
+        console.log(" -text", +text); //5
+        console.log(" -text", -text); //-5
+        console.log(" typeof -text", typeof -text); //number
+        /* ungültige Zahl: */
+        text = "5c";
+        console.log(" typeof +text", typeof +text); //number
+        console.log(" +text", +text); //NaN
+
+        /* variante 2 */
+        let text2 = "100";
+        console.log("Number(text2): ", Number(text2)); //100
+        console.log("typeof Number(text2): ", typeof Number(text2));//number
+
+        /* variante 3 */
+        let text3 = "101";
+        console.log("parseInt(text3, 16): ", parseInt(text3, 16));//257
+        console.log("parseInt(text3, 2): ", parseInt(text3, 2)); //5
+
+        /* number to string */
+        /* variante 2 */
+        console.log("String(zahl): ", String(zahl)); //5
+        console.log("typeof String(zahl): ", typeof String(zahl)); //string
+
+
+        /* arrays */
+        let myArray = [1, 3, 5];
+        console.log("typeof myArray: ", typeof myArray);//object
+        console.log(" myArray instanceof Array: ", myArray instanceof Array);//true
+
+        const myArray2 = [5, 6, 7];
+        myArray2[1]="text";
+        console.log(typeof myArray2);//[ 5, "text", 7 ]
+        myArray2[3] = 6;        
+        console.log(myArray2);//[ 5, "text", 7, 6 ]
+        /* was bringt dann const:  */
+        myArray2 = [6,8,9];//TypeError: invalid assignment to const `myArray2'
+
+
+
+
+
+
+
+
+
+
+        
+        </script>
+    
+</body>
+</html>

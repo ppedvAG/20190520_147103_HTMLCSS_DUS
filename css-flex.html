@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS flexbox</title>
+    <style>
+        .container {
+            width: 100%;
+            height: 300px;
+            display: flex;
+
+            flex-flow: row;
+            /* ist initial */
+            justify-content: center;
+            /* horizontal, ohne Abstand zw Elementen */
+
+            align-items: center;
+            /* vertikal */
+        }
+        .item {
+            background-color: thistle;
+            width: 200px;
+            height: 200px;
+            border: thin solid firebrick;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- div#container>div.item{div $}*6 -->
+    <p>Per default werden alle Elemente in einer Zeile platziert. Auch wenn sie nicht in die Zeile reinpassen, ihre
+        Breite wird angepasst</p>
+    <div class="container">
+        <div class="item">div 1</div>
+        <div class="item">div 2</div>
+        <div class="item">div 3</div>
+        <div class="item">div 4</div>
+        <div class="item">div 5</div>
+        <div class="item">div 6</div>
+    </div>
+    <p>flexbox wird oft genutzt, um Elemente zu zentrieren</p>
+    <div class="container">
+        <div class="item">div 1</div>
+    </div>
+
+
+
+
+</body>
+
+</html>

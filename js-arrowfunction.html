@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Pfeilfuntionen</title>
+</head>
+<body>
+    <a href="https://developer.mozilla.org/en-US/docs/Glossary/Function">Link</a>
+    <p id="out1"></p>
+    <p id="out2"></p>
+    <p id="out2_1"></p>
+    <p id="out3"></p>
+    <p id="out4"></p>
+    <p id="out5"></p>
+    <p id="out6"></p>
+
+    <script>
+        let elements = ["Kupfer", "Eisen", "Magnesium", "Brom"];
+        let results = [];
+
+        /* anonyme Fkt */
+        results = elements.map(function(el){
+            return el.length;
+        })
+        out1.textContent = "1. " + results;
+
+        /* arrow f */
+        /* ohne Schlüsselwort function, mit => */
+        results = elements.map((el) => {
+            return el.length;
+        })
+        out2.textContent = "2. " + results;
+
+        /* Austesten Pfeilfct ohne return */
+        elements.forEach((x, i, arr) => {arr[i] = "Hallo" + x});
+        out2_1.textContent = "6. " + elements;
+        /* funktioniert */
+
+        /* wenn nur eine Anw, und diese Anw ist eine return-Anw,
+         dann ohne Schlüsselwort return und ohne geschw. Kl. */
+        results = elements.map((el) => el.length)
+        out3.textContent = "3. " + results;
+
+        results = elements.map(el => el.length)
+        out4.textContent = "4. " + results;
+
+        /* interpolation */
+        results = elements.map(({length: eineVar}) => eineVar)
+        out5.textContent = "5. " + results;
+
+        /* interpolation kürzer*/
+        results = elements.map(({length}) => length)
+        out6.textContent = "6. " + results;
+
+
+
+    
+    </script>
+    
+</body>
+</html>

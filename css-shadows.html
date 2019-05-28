@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Schatten</title>
+    <style>
+        #container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: #D9D9D9;
+            padding: 25px;
+            font-size: 3rem;
+            font-weight: bold;
+            font-family: Papyrus, sans-serif;
+        }
+
+        /* hier wähle ich alle classes, die mit "shadow" anfangen, aus: */
+
+        div[class^="shadow"] {
+            margin: 30px;
+            width: 200px;
+            height: 200px;
+            background-color: lawngreen;
+            padding: 20px;
+            box-sizing: border-box;
+            border: 1px solid red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .shadow1 {
+
+            box-shadow: 10px 20px;
+            /*Schatten 10px nach rechts, 20px nach unten versetzt, Farbe per default: schwarz */
+        }
+
+        .shadow2 {
+
+            box-shadow: 10px 20px 30px black;
+            /* Schatten gleicher Versatz wie oben, aber jetzt mit Blur-Radius */
+        }
+
+        .shadow3 {
+
+            box-shadow: 10px 20px 30px 20px black;
+            /* Der vierte (optionale Wert) betrifft die AUSDEHNUNG ("spread"-radius) */
+        }
+
+        .shadow4 {
+
+            box-shadow: 10px 20px 30px darkorchid;
+            /* Der Schatten kann auch eine andere FARBE haben */
+        }
+
+        .shadow5 {
+
+            box-shadow: 0 0 50px crimson;
+            /* Schatten direkt unter dem Objekt, mit Blur-Radius (an allen vier Seiten sichtbar) */
+        }
+
+        .shadow6 {
+
+            box-shadow: 10px 20px 30px inset;
+            /*Schatten INNERHALB des Objektes */
+        }
+
+        .shadow7 {
+
+            box-shadow: 0 0 30px inset;
+            /*Schatten INNERHALB des Objektes ohne Versatz (auf allen vier Seiten) */
+        }
+
+        .shadow8 {
+
+            box-shadow: 10px 10px 30px blue, 15px 15px 40px red, 25px 25px 40px yellow;
+            /* MEHRFACHER Schatten */
+        }
+
+        .shadow9 {
+
+            box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.5), 10px 10px 25px rgba(0, 0, 0, 0.3);
+            /* DOPPELTER Schatten mit Transparenz*/
+        }
+
+        .shadowz {
+            padding: 10px;
+            font-size: 2rem;
+            font-family: "Bookman Old Style", serif;
+            text-align: center;
+            font-weight: 100;
+
+            /* damit es auch in allen Browsern funktioniert, entsprechende Angaben für alle Schatten machen: */
+            -webkit-box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.5), 10px 10px 25px rgba(0, 0, 0, 0.3);
+            -moz-box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.5), 10px 10px 25px rgba(0, 0, 0, 0.3);
+            box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.5), 10px 10px 25px rgba(0, 0, 0, 0.3);
+
+            /* wie lange soll ein Übergang dauern (z.B. bei Mouseover; immer, wenn sich etwas verändert): */
+            transition-duration: 1s;
+
+            /* man kann eine Veränderung auch verzögert starten - Angabe in s oder ms:
+            -webkit-transition-delay: 2s;
+            -moz-transition-delay: 2s;
+            -o-transition-delay: 2s;
+            -ms-transition-delay: 2s;
+            transition-delay: 2s;
+            */
+        }
+
+
+        /* Aufgabe: hover-Effekt erstellen mit Schatten (was soll passieren, wenn man mit der Maus drüberfährt): */
+
+        .shadowz:hover {
+            -webkit-box-shadow: 0 0 50px inset;
+            -moz-box-shadow: 0 0 50px inset;
+            box-shadow: 0 0 50px inset;
+            text-shadow: 0 0 30px red;
+            cursor: pointer;
+            width: 220px;
+            height: 220px;
+            background-color: cyan;
+        }
+
+        .shadowtext {
+            padding: 10px;
+            font-size: 2rem;
+            text-shadow: 3px 3px 5px;
+        }
+
+
+        /* die erste (angezeigte!) Zeile eines Paragraphen soll anders gestylt werden: */
+
+        p::first-line {
+            color: crimson;
+            text-shadow: 3px 3px 5px blue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- div#container>div.shadow${shadow $}*9 -->
+    <div id="container">
+        <div class="shadow1">shadow 1</div>
+        <div class="shadow2">shadow 2</div>
+        <div class="shadow3">shadow 3</div>
+        <div class="shadow4">shadow 4</div>
+        <div class="shadow5">shadow 5</div>
+        <div class="shadow6">shadow 6</div>
+        <div class="shadow7">shadow 7</div>
+        <div class="shadow8">shadow 8</div>
+        <div class="shadow9">shadow 9</div>
+        <div class="shadowz">shadow bei hover</div>
+        <div class="shadow0 textshadow">testtext für shadow</div>
+    </div>
+
+</body>
+
+</html>

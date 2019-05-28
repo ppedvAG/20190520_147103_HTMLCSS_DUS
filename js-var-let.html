@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS var & let</title>
+</head>
+<body>
+
+    <script>
+        /* deklariert & initialisiert */
+        let l = 4;
+        var v = 5;
+
+        /* redeklarieren */
+        var v = 7;
+        //let l = 6; //fehler, redeklarieren nicht möglich
+        console.log(v);
+        console.log(l);
+
+        /* window object */
+        console.log(this);
+        /* let-Variablen werden nicht zum window-Objekt hinzugefügt */        
+        console.log(window.l);//undefined
+
+        /* scope von var */
+        var a = 2;
+        console.log("var a vor {} " + a);
+        {
+            var a = 3;
+            console.log("var a in {} " + a);
+        }
+        console.log("var a nach {} " + a);
+
+        /* scope von let */
+        let b = 5;
+        console.log("let b vor {} " + b);
+        {
+            console.log("let b in {} vor neuem b " + b);//can't access lexical declaration `b' before initialization
+            //let b = 6;
+            /* redeklarieren möglich */
+            /* wenn redeklariert, dann in diesem scope kann man darauf nicht zugreifen, wie mit b */
+            /* {} */
+            console.log("let b in {} " + b);
+            console.log(l);
+
+        }
+        console.log("let b nach {} " + b);
+        
+        </script>
+    
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Funktionen</title>
+</head>
+<body>
+    <h1>Austesten von for-Schleifen</h1>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <h1>Funktionen</h1>
+
+    <!-- (h3{$. Funktion}+button[onclick="myFunction$()"]{demonstrate}+p#out$+hr)*6 -->
+    <h3>1. benannte Funktion ohne Argumente</h3>
+    <button onclick="myFunction1()">demonstrate</button>
+    <p id="out1"></p>
+    <hr>
+    <h3>2. benannte Funktion mit einem Argument</h3>
+    <button onclick="myFunction2(this)">demonstrate</button>
+    <p id="out2"></p>
+    <hr>
+    <h3>3. Übung - Funktion1 mit einem Argument</h3>
+    <button onclick="myFunction3()">demonstrate</button>
+    <p id="out3"></p>
+    <hr>
+    <h3>4. Funktion mit Rückgabewert</h3>
+    <button onclick="demonstrateMyFunction4()">demonstrate</button>
+    <p id="out4"></p>
+    <hr>
+    <h3>5. Funktion</h3>
+    <label for="z1">zahl1</label>
+    <input id="z1" type="number">
+    <label for="z2">zahl2</label>
+    <input id="z2" type="number">
+    <button onclick="myFunction5()">demonstrate</button>
+    <p id="out5"></p>
+    <hr>
+    <h3>6. anonyme Funktion</h3>
+    <button onclick="(function(){out6.textContent = 'anonyme F ist da'})()">demonstrate</button>
+    <p id="out6"></p>
+    <hr>
+
+
+
+    <script>
+        /* Austesten von for-Schleifen mit gleichen let-Variablen */
+        /* die lets stören sich gegenseitig nicht */
+        let pArray = document.getElementsByTagName('p');
+        for(let i = 0; i < pArray.length; i++){
+            /* pArray[i].textContent = "paragraph " + i; */
+        }
+        for(let i = 0; i < pArray.length; i++){
+            pArray[i].style.color = "red";
+        }
+        /* FUNKTIONEN */
+        function myFunction1() {
+            /* console.log("out1", out1); */
+            out1.textContent = "myFunction1() funktioniert";
+            /* austesten der gleichbenannten Variablen */           
+            /* let out1 = 7;
+            console.log("out1", out1); */
+        }
+
+        function myFunction2(arg1){
+            arg1.style.width = "300px";
+
+        }
+        /* wenn funktion ohne rw in eine Var - undefined */
+        //myFunction1();
+        function myFunction4() {
+            out4.innerText = "myF4() funzt";
+            return 6;
+        }
+        function demonstrateMyFunction4(){
+            let rw = myFunction4();
+            out4.innerText += " und demMyFnct4() auch, rw: &u " +  rw;
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Listen mit hybrider Nummerierung formatieren</title>
+    <style>
+      ol.ebene1 {
+        counter-reset: listenpunkt_ebene1;/* Variable anlegen */
+        list-style-type: none;
+      }
+      ol.ebene1 li::before {
+        content: counter(listenpunkt_ebene1) ". ";
+        counter-increment: listenpunkt_ebene1;
+      }
+      ol.ebene2 {
+        counter-reset:listenpunkt_ebene2;
+        list-style-type:none;
+      }
+      ol.ebene2 li::before {
+        content: counter(listenpunkt_ebene1) counter(listenpunkt_ebene2,lower-alpha) ". ";
+        counter-increment:listenpunkt_ebene2;
+      }
+    </style>
+  </head>
+  <body>
+    <ol class="ebene1">
+      <li>Allgemeines zu Pseudoformaten</li>
+      <li>Pseudoformate für Verweise
+        <ol class="ebene2">
+          <li>:link</li>
+          <li>:visited</li>
+          <li>:hover</li>
+          <li>:active</li>
+          <li>:focus</li>
+        </ol>
+      </li>
+      <li>Pseudoformate für Absätze
+        <ol class="ebene2">
+          <li>:first-line</li>
+          <li>:first-letter</li>
+          <li>:first-child </li>
+        </ol>
+      </li>
+      <li>Pseudoformate für automatisch generierten Text
+        <ol class="ebene2">
+          <li>::before</li>
+          <li>::after</li>
+        </ol>
+      </li>
+      <li>Automatische Nummerierung</li>
+    </ol>
+  </body>
+</html>

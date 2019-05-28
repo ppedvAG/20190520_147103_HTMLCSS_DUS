@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TS-Grundlagen</title>
+    <style>
+        /* Pfeile weg in Chrome */
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }        
+        /* Pfeile weg in FF */
+        input[type="number"] {
+            -moz-appearance: textfield;
+            
+        }
+    
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>ANMELDUNG</legend>
+        <label for="fname">Vorname: </label>
+        <input type="text" id="fname" placeholder="Max">
+        <label for="lname">Nachname: </label>
+        <input type="text" id="lname" placeholder="Mustermann">
+        <label for="birth">Geburtsdatum: </label>
+        <input type="date" id="birth">
+        <button type="button" onclick="checkInput()">OK</button>
+        <!-- oder: -->
+        <!-- <input type="button" value="OK"> -->
+    </fieldset>
+
+    <h2>Teilnehmerliste:</h2>
+
+    <ul id="participants"></ul>
+
+    <script src="ts-basics.js"></script>
+    
+</body>
+</html>

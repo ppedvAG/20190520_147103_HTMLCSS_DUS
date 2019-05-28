@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Canvas</title>
+    <style>
+        #container {
+            /* height: 100%; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 50px;
+
+        }
+        canvas {
+            border: thin solid;
+            width: 500px;
+            height: 400px;
+        }
+        /* #buttons {
+            width: 100%;
+            
+        } */
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <canvas id="myCanvas"></canvas>
+        <div id="buttons">
+            <button onclick="draw()">Zeichnen</button>
+            <button onclick="clearCanvas()">Clear</button>
+        </div>
+        
+    </div>
+
+
+    <script>
+
+        let canvasContext = myCanvas.getContext('2d');
+        function draw(){
+            if(canvasContext){
+                canvasContext.fillStyle = "blue";
+                canvasContext.fillRect(10, 10, 100, 50);
+                canvasContext.translate(50, 50);
+                canvasContext.fillRect(10, 10, 100, 50);
+
+                let text = "canvas text";                
+                canvasContext.fillText(text, 220, 100);
+            }
+        }
+        function clearCanvas(){
+            //beim versetzten Koordinatenursprung aufpassen! evtl nicht alles wird gecleart
+            //canvasContext.clearRect(0, 0, canvasContext.canvas.width, canvasContext.canvas.height)
+            
+            //canvasContext.canvas.width = canvasContext.canvas.width;
+            myCanvas.width = myCanvas.width;
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Emmet / Zen Coding</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <a href="http:www.emmet.io">Link zu Emmet</a>
+    <p>Leerzeichen nur innerhalb von geschweiften Klammern</p>
+
+    <h1>Inhalt / Text</h1>
+    <!-- h1{Heading 1} -->
+    <h1>Heading 1</h1>
+    <hr>
+
+    <h1>Eltern-Kind</h1>
+    <!-- div>h1{Heading 1 in div} -->
+    <div>
+        <h1>Heading 1 in div</h1>
+    </div>
+    <hr>
+
+    
+
+    <h1>Wiederholung</h1>
+    <!-- div>p{p}*3 -->
+    <div>
+        <p>p</p>
+        <p>p</p>
+        <p>p</p>
+    </div>
+    <hr>
+
+    <h1>Attribute</h1>
+    <!-- div>img[src="http:picsum.photos/200/?random"]*3 -->
+    <div>
+        <img src="http:picsum.photos/200/?random" alt="">
+        <img src="http:picsum.photos/200/?random" alt="">
+        <img src="http:picsum.photos/200/?random" alt="">
+    </div>
+    <hr>
+
+    <h1>Nummerierung</h1>
+    <!-- div>p{$. paragraph}*3 -->
+    <!-- zweistellig mit $$ usw. -->
+    <div>
+        <p>1. paragraph</p>
+        <p>2. paragraph</p>
+        <p>3. paragraph</p>
+    </div>
+
+    <hr>
+
+    <!-- div>img[src="http:picsum.photos/200/?random$"]*3 -->
+    <div>
+        <img src="http:picsum.photos/200/?random1" alt="">
+        <img src="http:picsum.photos/200/?random2" alt="">
+        <img src="http:picsum.photos/200/?random3" alt="">
+    </div>
+
+    <hr>
+
+    <h1>IDs</h1>
+    <!-- div#container -->
+    <div id="container">div mit id</div>
+    <hr>
+    <h1>Klassen</h1>
+    <!-- div.wrapper{div mit Klasse}*2 -->
+    <div class="wrapper">div mit Klasse</div>
+    <div class="wrapper">div mit Klasse</div>
+    <hr>
+
+    <h1>Attribut type</h1>
+    <!-- input:password -->
+    <input type="password" name="" id="">
+
+    <hr>
+    <h1>Random Text - lorem</h1>
+    <!-- ul>lorem10*4 -->
+    <ul>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, doloribus.</li>
+        <li>Eveniet dolorem minus expedita! Id labore laborum corrupti debitis maiores!</li>
+        <li>Rem sit a, pariatur obcaecati libero quibusdam inventore voluptates temporibus.</li>
+        <li>Natus velit incidunt similique sint dignissimos omnis aut, laborum recusandae!</li>
+    </ul>
+    <!-- Frage: li automatisch, welche Elemente werden noch autom erscheinen? -->
+    <hr>
+
+    <h1>verschachtelte Multiplikation</h1>
+    <!-- ul>(ul>li{list item $}*2)*2 -->
+    <ul>
+        <ul>
+            <li>list item 1</li>
+            <li>list item 2</li>
+        </ul>
+        <ul>
+            <li>list item 1</li>
+            <li>list item 2</li>
+        </ul>
+    </ul>
+    <hr>
+
+    <h1>Geschwister</h1>
+    <!-- div>h1{h1}+p{p} -->
+    <div>
+        <h1>h1</h1>
+        <p>p</p>
+    </div>
+    <p>bei Verschachtelung und Klammern auch ohne plus</p>
+    <!-- div>(div>p{p}*3)(div>p{p}*3) -->
+    <div>
+        <div>
+            <p>p</p>
+            <p>p</p>
+            <p>p</p>
+        </div>
+        <div>
+            <p>p</p>
+            <p>p</p>
+            <p>p</p>
+        </div>
+    </div>
+    <hr>
+    
+
+    
+</body>
+</html>

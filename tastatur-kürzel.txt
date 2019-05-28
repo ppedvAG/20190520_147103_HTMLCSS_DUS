@@ -1,0 +1,8 @@
+alt b - open in default browser
+alt shift f - datei formatieren
+alt shift a - mehrzeiliger Kommentar
+strg # - einzeiliger Kommentar, JS
+strg leertaste - intellisence o. emmet aufrufen
+alt pfeil - element verscheiben (ohne markierung)
+strg shift b - ts-Datei builden
+strg f5 - browser-cach leeren, wichtig bei inputs

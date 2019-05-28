@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulare</title>
+</head>
+<body>
+    <!-- action="checkform.php" -->
+    <form action="#">
+        <h2>min max & try catch</h2>
+        <h4>Marathonanmeldung</h4>
+        <p>Beim Alter 7-16 - Kindermarathon,
+            17-65 - Marathon,
+            &gt;65 - mit zusätzlicher Versicherung</p>
+        <!-- 
+    " is replaced with &quot;
+    & is replaced with &amp;
+    < is replaced with &lt;
+    > is replaced with &gt;
+ -->
+        <div>
+            <label for="inpAge">Ihr Alter:</label>
+            <input type="number" id="inpAge" name="" min="7" max="99">
+            <button type="button" onclick="trycatch1()">OK</button>
+            <p id="outpErr"></p>
+            <p id="outpWelcome"></p>
+
+        </div>
+        <hr>
+        <h2>input type color</h2>
+        <div><label for="">Farbe: </label><input type="color" id="" name=""></div>
+        <hr>
+
+        <h2>input type radio</h2>
+        <h3>Titelabfrage Herr / Frau</h3>
+        <div><label for="woman">Frau</label><input type="radio" id="woman" name="title"></div>
+        <div><label for="man">Herr</label><input type="radio" id="man" name="title"></div>
+        <hr>
+
+        <h2>input type checkbox</h2>
+        <h3>Pizzaextras</h3>
+        <div><label for="cheese">Käse</label><input type="checkbox" id="cheese" name="inpCheck"></div>
+        <div><label for="salami">Salami</label><input type="checkbox" id="salami" name="inpCheck"></div>
+        <div><label for="mushrooms">Pilze</label><input type="checkbox" id="mushrooms" name="inpCheck"></div>
+        <div><label for="pineapple">Ananas</label><input type="checkbox" id="pineapple" name="inpCheck"></div>
+        <button type="button" onclick="getSelected()">OK</button>
+        <p id="outPizza"></p>
+        <hr>
+
+        <h2>input type range</h2>
+        <h4>Hotelzimmerpreis</h4>
+        <div>
+            <label for="inpPrice"></label>
+            <input type="range" id="inpPrice" min="20" max="200" step="5" value="70" oninput="showPrice()">
+            <p id="outpPrice"></p>
+        </div>
+
+        <h2>input with pattern-attribute</h2>
+        <div><label for="">Tel</label><input type="tel" pattern="\+49\d{9,11}" value="+49" title="Format: '+49 mit 9 bis 11 weiteren Ziffern'"></div>
+    </form>
+
+    <script scr="html-forms.js">
+    </script>
+
+</body>
+</html>

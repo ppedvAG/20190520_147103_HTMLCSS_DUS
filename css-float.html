@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS float & clear</title>
+    <style>
+        div {            
+            float: right;
+            height: 100px;
+        }
+        div, h1, p {
+            border: thick double slategray;
+        }
+        
+        /* #div5::after {
+            clear: both;
+        } */
+        
+        h1 {
+            clear: right;
+        }
+        /* #clear {
+            clear: both;
+        } */
+    
+    </style>
+</head>
+<body>
+    <h2>Beispiel 1</h2>
+    <div>div 1</div>
+    <div>div 2</div>
+    <div>div 3</div>
+    <div>div 4</div>
+    <div id="div5">div 5</div>
+    <div id="clear"></div>
+    <h1>heading 1</h1>
+    <p>paragraph</p>
+
+    
+
+    
+</body>
+</html>

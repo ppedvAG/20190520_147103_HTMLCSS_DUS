@@ -1,0 +1,11 @@
+w3schools.com 
+Tutorials & Referenzen für Web-Technologien
+
+emmet.io
+
+
+web-editor für HTML, CSS, JS, auch viele Beispiele
+https://codepen.io/#
+
+offizielle JS-Dokumentation
+https://developer.mozilla.org/de/docs/Web/JavaScript

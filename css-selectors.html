@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Selektoren</title>
+    <style>
+        /* Kommentar in CSS */
+
+
+        /* 1. Universalselektor */
+        /* Spezifität 0,0,0 */
+        * {
+            color: blue;
+        }
+
+        /* 2. Tag-Selektor (Typ-Selektor) */
+        /* hat höreren Rang / Spezifität 0,0,1  */
+        p {
+            color: red;
+        }
+
+        /* 3. Klassen-Selektor */
+        /* Spezifität 0,1,0 */
+        .pClass {
+            color: green;
+            font-style: italic;
+        }
+
+        /* 4. Id-Selektor */
+        /* Spezifität 1,0,0 */
+        /* Attribut Style direkt beim Element hat aber höhere Spezifität */
+        #pId {
+            color: yellow;
+        }
+
+        /* 5. KOMBINATOREN */
+        /* 5.1. Auflistung  */
+        h1,
+        a {
+            color: grey;
+        }
+
+        /* bei gleicher Spezifität die letzte Deklaration gewinnt */
+        /* p {
+            color: grey;
+        } */
+
+        /* 5.2. Geschwister-Selektor */
+        /* nur p direkt nach h3 */
+        /* Spezifität 0,0,2 */
+        h3+p {
+            border: 1px solid black;
+        }
+
+        /* 5.3. Eltern-Kind-Selektor */
+        /* div > p {
+            border: 1px solid black;
+        } */
+
+        /* 5.4. Vorfahr-Nachfahr-Selektor */
+        div p {
+            border: 1px solid black;
+        }
+
+        /* 6. Attribut-Selektor */
+        /* *[onclick] {} */
+        /* oder: */
+        [onclick] {
+            cursor: pointer;
+        }
+
+        /* 6.1 */
+        /* E[attribute^="abc"] Erfasst Elemente vom Typ E,
+        deren Attribut mit der Zeichenkette mit "abc"beginnt */
+
+         /* 6.2 */         
+         /* E[attribute$="abc"] Erfasst Elemente vom Typ E,
+        deren Attribut mit der Zeichenkette mit "abc"endet  */
+        
+         /* 6.3 */
+         /* E[attribute*="abc"] Erfasst Elemente vom Typ E,
+        deren Attribut die Zeichenkette "abc"enthält */       
+       
+
+        /* 7. PSEUDOELEMENTE */
+        /* 7.1. Pseudoklassen (event erwartet) */
+        p:hover {
+            font-weight: bold;
+        }
+
+        /* 7.2. Pseudoelemente */
+        p::first-letter {
+            font-size: 1.5em;
+        }
+
+        /* 8. not()-Selektor */
+        p:not(#pId)::first-letter {
+            font-size: 1em;
+        }
+
+        /* 9. nth-Selektoren */
+        /* 9.1. nth-child */
+        /* 9.2. nth-of-type */
+    </style>
+</head>
+text in html
+
+<body>
+    <!-- Kommentar in HTML -->
+    text in body
+    <h1>Heading 1 in body</h1>
+    <section>
+        <h1 onclick="myFunction()">Heading 1 in section</h1>
+    </section>
+    <div>
+        <h3>Heading 3</h3>
+        <p>Paragraph</p>
+        <p onclick="myFunction()">Paragraph</p>
+        <article>
+            <h1>Heading 1 in article</h1>
+            <p>Paragraph in article in div</p>
+        </article>
+        <p class="pClass" id="pId" style="color: brown">Paragraph mit class mit id</p>
+        <p>Paragraph</p>
+    </div>
+    <a href="#">Link-Anker</a>
+    <p>Paragraph 1 außerhalb von div</p>
+    <p class="pClass">Paragraph 2 außerhalb von div</p>
+    <script>
+        /* Kommentar in JS, mehrzeilig */
+        /**
+        * eine Zeile
+        * Zeile Zeile
+        */
+    // Kommentar in JS, einzeilig
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Größenangaben</title>
+    <style>
+        /* Austesten von runden Ecken, ein Kreis */
+        #kreis {
+            background-color:blue;
+            border: thin solid;
+            border-radius: 50%;
+            width:200px;
+            height: 200px;
+        }
+        /* Austesten von border-style */
+        #quadrat {
+            background-color:blue;
+            border-width: 100px;
+            border-style: double;/* groove, dotted, inset, solid... */
+            border-color: grey;
+            width:200px;
+            height: 200px;
+            box-sizing: border-box;
+        }
+        /* gehört zum Thema des Beispiels: */
+        div {
+            border: medium solid lightblue;
+        }
+
+        #pixel {
+            font-size: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        #prozent {
+            font-size: 10%;
+            /* 	padding bezieht sich auf die Breite des äußeren Elements */
+            padding: 10%;
+
+            border-radius: 10%;
+        }
+
+        body {
+            font-size: 20px;
+        }
+
+        #em {
+            font-size: 1.5em;
+            padding: 1em;
+            border-radius: 1em;
+        }
+
+        html {
+            font-size: 40px;
+        }
+
+        /* erst bei definierter fester Größe für html */
+        #rem {
+            font-size: 1rem;
+            padding: 1rem;
+            border-radius: 1rem;
+        }
+
+        #vw {
+            font-size: 1vw;
+            padding: 1vw;
+            border-radius: 1vw;
+        }
+
+        #vh {
+            font-size: 1vh;
+            padding: 1vh;
+            border-radius: 1vh;
+        }
+
+        #vmin {
+            font-size: 1vmin;
+            padding: 1vmin;
+            border-radius: 1vmin;
+        }
+
+        #vmax {
+            font-size: 1vmax;
+            padding: 1vmax;
+            border-radius: 1vmax;
+        }
+        #container {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-columns: 25% 50% 25%;
+            grid-gap: 1em;
+        }
+        .griditem {
+            background-color:lightslategrey;
+            height: 40px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="kreis"></div>
+    <div id="quadrat"></div>
+
+    <!-- ((div[id=""]>h1+p{lorem10})+(hr))*8 -->
+    <div id="pixel">
+        <h1>Pixel</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, doloremque.</p>
+    </div>
+    <hr>
+    <div id="prozent">
+        <h1>Prozent</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste, aliquam?</p>
+    </div>
+    <hr>
+    <div id="em">
+        <h1>Em</h1>
+        <p>1em = definierte Schriftgröße für Elternelement. Wenn nichts definiert, dann das Default-Wert vom Browser</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, excepturi.</p>
+
+    </div>
+    <hr>
+    <div id="rem">
+        <h1>Rem</h1>
+        <p>1rem = definierte Schriftgröße für html.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, veritatis?</p>
+    </div>
+    <hr>
+    <div id="vw">
+        <h1>Viewport width</h1>
+        <p>1vw = 1% von viewport Breite</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, esse?</p>
+    </div>
+    <hr>
+    <div id="vh">
+        <h1>Viewport height</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio, eum.</p>
+    </div>
+    <hr>
+    <div id="vmin">
+        <h1>Viewport min(width, height)</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, consectetur.</p>
+    </div>
+    <hr>
+    <div id="vmax">
+        <h1>Viewport max(width, height)</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, dolores.</p>
+    </div>
+    <hr>
+    <h1>Fraction</h1>
+    <div id="container">
+        <div class="griditem"></div>
+        <div class="griditem"></div>
+        <div class="griditem"></div>
+    </div>
+
+</body>
+
+</html>

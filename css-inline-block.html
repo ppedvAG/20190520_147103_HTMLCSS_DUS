@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS inline- & block-Elemente</title>
+    <style>
+        body {
+            border: thin solid;
+            /* margin: 8px; ist default */
+        }
+        p, span {
+            background-color:lightsalmon;
+        }
+        .bsp2 {
+            width: 100px;
+            height: 100px;
+        }
+        .bsp3 {
+            border: thin dotted;
+            padding: 10px;
+            margin: 10px;
+        }
+        .bsp4 {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>1. Breite</h1>
+    <h4>BlockElemente sind so breit wie möglich</h4>
+    <h4>Blockelemente fangen in der neuen Zeile an. Das sieht man, wenn man den die Breite zuweist</h4>
+    <p>paragraph</p>
+    <p>paragraph</p>
+    <h4>InlineElemente sind so breit wie nötig</h4>
+    <h4>Das erklärt auch, warum inline-El in der gleichen Zeile stehen</h4>
+    <span>span</span><span>span</span>
+    <hr>
+
+    <h1>2. Größenangaben</h1>
+    <h4>Inlineelemente ignorieren width & height</h4>
+    <p class="bsp2">paragraph</p>
+    <p class="bsp2">paragraph</p>
+    <span class="bsp2">span</span><span class="bsp2">span</span>
+    <hr>
+
+    <h1>3. Box-Modell</h1>
+    <h4>Inlineelemente ignorieren margin-top & margin-bottom</h4>
+    <p class="bsp3">paragraph</p>
+    <p class="bsp3">paragraph</p>
+    <span class="bsp3">span</span><span class="bsp3">span</span>
+    <hr>
+
+    <h1>4. Kombination von beiden: inline-block</h1>
+    <h4>akzeptieren width & height, stehen aber in der gleichen Zeile</h4>
+    <p class="bsp4">paragraph</p>
+    <p class="bsp4">paragraph</p>
+    <span class="bsp4">span</span>
+    <span class="bsp4">span</span>
+
+
+
+</body>
+
+</html>

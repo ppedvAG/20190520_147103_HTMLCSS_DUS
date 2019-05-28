@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Farben</title>
+    <style>
+        body {
+            /* https://www.w3schools.com/cssref/css3_pr_background.asp */
+            /*  lea.veru.me     "CSS3 patterns" in google suche  */
+            background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+                linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+                linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+                linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+                linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+                linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+            background-color: #131313;
+            background-size: 20px 20px;
+        }
+
+        /*
+        div:not(#container):not(.ball){
+            border: 3px solid darkslategray;
+            box-sizing: border-box;
+        }
+        */
+
+
+        #container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background-color: #D9D9D9;
+            margin: 75px;
+            padding: 25px;
+        }
+
+        .bg1 {
+            margin: 25px auto;
+            width: 200px;
+            height: 200px;
+            background-color: lawngreen;
+            /*falls ein browser kein gradient kennt, nimmt er diese Farbe */
+            background: linear-gradient(aqua, fuchsia);
+        }
+
+        .bg2 {
+            margin: 25px auto;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(aqua, fuchsia, crimson);
+        }
+
+        .bg3 {
+            margin: 25px auto;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(aqua 25%, fuchsia, crimson 75%);
+        }
+
+        .bg4 {
+            margin: 25px auto;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, aqua 25%, fuchsia, crimson 75%);
+        }
+
+        .bg5 {
+            margin: 25px auto;
+            width: 200px;
+            height: 200px;
+            background: repeating-linear-gradient(45deg, aqua 10px, fuchsia, crimson 50px);
+            /* crimson auf 20px setzen, check Ergebnis :) */
+            /* der repeating-linear-gradient hier geht von 10px bis 50px; davor und danach wird der gradient wiederholt */
+        }
+
+        .rad1 {
+            margin: 25px auto;
+            width: 200px;
+            height: 200px;
+            background-color: lawngreen;
+            /*falls ein browser kein gradient kennt, nimmt er diese Farbe */
+            background: radial-gradient(aqua 25%, fuchsia, crimson 75%);
+        }
+
+        .rad2 {
+            margin: 25px auto;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(aqua 25%, fuchsia, crimson 75%);
+            border-radius: 50%;
+        }
+
+        .rad3 {
+            margin: 25px auto;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(300px 50px, aqua 25%, fuchsia, crimson 75%);
+        }
+
+        .rad4 {
+            margin: 25px auto;
+            width: 200px;
+            height: 200px;
+            /* syntax: background-image: radial-gradient(shape size at position, start-color, ..., last-color);  */
+            background: radial-gradient(300px 50px at 0 150px, aqua 25%, fuchsia, crimson 75%);
+        }
+
+        .rad5 {
+            margin: 25px auto;
+            width: 200px;
+            height: 200px;
+            background: repeating-radial-gradient(aqua 25%, fuchsia, crimson 75%);
+        }
+
+        .rad6 {
+            margin: 25px 100px;
+            width: 100%;
+            /* beachte, wie sich das Aussehen des radial gradient verändert, wenn das Seitenverhältnis geändert wird! */
+            height: 200px;
+            background: repeating-radial-gradient(aqua 25%, fuchsia, crimson 75%);
+        }
+
+        .ball {
+            margin: 25px auto;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(100px 100px at 70px 70px, white 5%, rgb(221, 252, 252) 10%,
+                rgb(17, 141, 190) 50%, rgb(29, 80, 134) 90%, rgb(18, 53, 92) 130%);
+            border-radius: 50%;
+            box-shadow: 30px 45px 100px #1a1a1a;
+            text-align: center;
+        }
+
+        /* Gradient in Text: */
+        #xInSpan {
+            font-size: 200px;
+            background: linear-gradient(rgb(253, 126, 126), rgb(0, 0, 0));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://www.w3schools.com/cssref/func_radial-gradient.asp">w3schools radial gradient</a>
+
+    <div id="container">
+        <div class="bg1"></div>
+        <div class="bg2"></div>
+        <div class="bg3"></div>
+        <div class="bg4"></div>
+        <div class="bg5"></div>
+
+        <div class="rad1"></div>
+        <div class="rad2"></div>
+        <div class="rad3"></div>
+        <div class="rad4"></div>
+        <div class="rad5"></div>
+        <div class="rad6"></div>
+        <div class="ball"><span id="xInSpan">x</span>
+        </div>
+    </div>
+
+</body>
+
+</html>
